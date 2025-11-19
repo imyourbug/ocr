@@ -24,6 +24,7 @@ def remove_strike_lines(img_gray):
         cv2.rectangle(mask, (x-2, y-2), (x+w+2, y+h+2), 0, -1)
 
     cleaned = cv2.bitwise_and(img_gray, img_gray, mask=mask)
+
     return cv2.medianBlur(cleaned, 3)
 
 def extract_codes_from_image(img: np.ndarray) -> List[str]:
